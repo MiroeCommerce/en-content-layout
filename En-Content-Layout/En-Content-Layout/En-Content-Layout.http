@@ -1,0 +1,6 @@
+@En_Content_Layout_HostAddress = http://localhost:5068
+
+GET {{En_Content_Layout_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
