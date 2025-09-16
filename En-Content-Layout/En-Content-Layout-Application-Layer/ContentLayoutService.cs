@@ -12,9 +12,24 @@ namespace En_Content_Layout_Application_Layer
             _contentLayoutRepository = contentLayoutRepository;
         }
 
-        public async Task<IList<AdminPages>> GetPages()
+        public async Task<AdminPage> CreatePage(AdminPage page)
+        {
+            return await _contentLayoutRepository.CreatePage(page);
+        }
+
+        public async Task DeletePage(int pageId)
+        {
+            await _contentLayoutRepository.DeletePage(pageId);
+        }
+
+        public async Task<IList<AdminPage>> GetPages()
         {
             return await _contentLayoutRepository.GetPages();
+        }
+
+        public async Task<AdminPage> UpdatePage(AdminPage pageDetails, int pageId)
+        {
+            return await _contentLayoutRepository.UpdatePage(pageDetails, pageId);
         }
     }
 }

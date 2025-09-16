@@ -7,6 +7,9 @@ namespace En_Content_Layout_Application_Layer.Interfaces
 {
     public interface IContentLayoutService
     {
-        Task<IList<AdminPages>> GetPages();
+        Task<AdminPage> CreatePage(AdminPage page);
+        Task DeletePage(int pageId);
+        Task<IList<AdminPage>> GetPages();
+        Task<AdminPage> UpdatePage(AdminPage pageDetails, int pageId);
     }
 }

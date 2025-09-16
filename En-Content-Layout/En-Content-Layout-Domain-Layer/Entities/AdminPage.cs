@@ -5,14 +5,12 @@ using System.Text;
 
 namespace En_Content_Layout_Domain_Layer.Entities
 {
-    public class PageWidgets
+    public class AdminPage
     {
-        public int WidgetId { get; set; }
         public int PageId { get; set; }
         [Required]
-        public string WidgetName { get; set; }
-        public int Position { get; set; }
-
-
+        public string PageName { get; set; }
+        public string? Description { get; set; }
+        public DateTime CreatedAt { get; set; }
     }
 }
