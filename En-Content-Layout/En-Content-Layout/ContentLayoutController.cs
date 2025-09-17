@@ -13,6 +13,10 @@ namespace En_Content_Layout
         {
             _contentLayoutService = contentLayoutService;
         }
+        /// <summary>
+        /// Fetches all admin pages
+        /// </summary>
+        /// <returns>200 status code on successful retrieval, 204 if no pages are found</returns>
         [HttpGet("pages")]
         public async Task<IActionResult> GetPages()
         {
@@ -22,6 +26,11 @@ namespace En_Content_Layout
                 return Ok(allPages);
             return NoContent();
         }
+        /// <summary>
+        /// Creates a new page in the admin panel database
+        /// </summary>
+        /// <param name="page">Page to be created</param>
+        /// <returns>201 status code with the page id on successful execution, 400 on failure</returns>
         [HttpPost("pages")]
         public async Task<IActionResult> CreatePage(AdminPage page)
         {
@@ -32,6 +41,12 @@ namespace En_Content_Layout
                 return CreatedAtAction(nameof(GetPages), new { pageId = createdPage.PageId});
             return BadRequest();
         }
+        /// <summary>
+        /// Updates the content, layout, or metadata of an existing page
+        /// </summary>
+        /// <param name="pageDetails">Updated page details</param>
+        /// <param name="pageId">Id of page to update</param>
+        /// <returns>200 status code on successful update</returns>
         [HttpPut("pages/{pageId}")]
         public async Task<IActionResult> UpdatePage(AdminPage pageDetails, int pageId)
         {
@@ -41,6 +56,11 @@ namespace En_Content_Layout
                 return Ok();
             return BadRequest();
         }
+        /// <summary>
+        /// Deletes a page from the admin panel database
+        /// </summary>
+        /// <param name="pageId">Id of page to be deleted</param>
+        /// <returns>200 status code on successful delete</returns>
         [HttpDelete("pages/{pageId}")]
         public async Task<IActionResult> DeletePage(int pageId)
         {
