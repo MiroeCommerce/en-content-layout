@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\En-Content-Layout-Application-Layer\En-Content-Layout-Application-Layer.csproj" />
+    <ProjectReference Include="..\En-Content-Layout-Infrastructure-Layer\En-Content-Layout-Infrastructure-Layer.csproj" />
   </ItemGroup>
 
 </Project>
